@@ -1,7 +1,7 @@
 import React from 'react';
-import './Card.css';
+import './FeedCard.css';
 
-const Card = ({data}) => {
+const FeedCard = ({data}) => {
   return (
     <>
       <div className='card item'>
@@ -17,4 +17,4 @@ const Card = ({data}) => {
   )
 }
 
-export default Card
+export default FeedCard
