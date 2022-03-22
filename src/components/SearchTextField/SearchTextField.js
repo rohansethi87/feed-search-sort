@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const SearchFilter = ({ data, changeData }) => {
-  const search = (e) => {
-    let sq = e.target.value;
+const SearchFilter = ({ currentPosts, changeData, searchQuery, setSearchQuery }) => {
 
-    const newArr = data.filter((obj) => obj.description.includes(sq));
-    changeData(newArr);
-  };
+  useEffect(() => {
+      const searchData = currentPosts.filter((obj) => obj.description.includes(searchQuery));
+      changeData(searchData);
+  }, [searchQuery])
 
-  return <input onChange={search} placeholder="Search" />;
+  return <input onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search" value={searchQuery}/>;
 };
 
 export default SearchFilter;
